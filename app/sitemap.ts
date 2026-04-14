@@ -5,12 +5,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     { url: siteUrl, lastModified: now, changeFrequency: "daily", priority: 1 },
+    { url: `${siteUrl}/app`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
     { url: `${siteUrl}/sports/cricket`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${siteUrl}/sports/ipl`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
+    { url: `${siteUrl}/casino`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${siteUrl}/promotions`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${siteUrl}/payments`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/sports/kabaddi`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${siteUrl}/casino`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${siteUrl}/app`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
     { url: `${siteUrl}/responsible-gaming`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${siteUrl}/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
+    // Note: /login and /register are noindex — excluded from sitemap intentionally
   ];
 }

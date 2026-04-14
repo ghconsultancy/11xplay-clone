@@ -11,7 +11,15 @@ import MobileBottomNav from "@/components/MobileBottomNav";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://11xplay.in";
 
 export const metadata: Metadata = {
-  alternates: { canonical: siteUrl },
+  title: {
+    absolute: "11xPlay — India's Trusted Cricket ID & Fantasy Sports Platform",
+  },
+  description:
+    "Sign up on 11xPlay for cricket fantasy sports, live skill games, and fast UPI deposits. India's most trusted cricket ID provider.",
+  alternates: {
+    canonical: siteUrl,
+    languages: { "en-IN": siteUrl },
+  },
 };
 
 const homeSchema = {
@@ -23,7 +31,7 @@ const homeSchema = {
       url: siteUrl,
       name: "11xPlay",
       description:
-        "India's #1 Fantasy Sports & Skill Gaming Platform",
+        "India's Trusted Cricket ID & Fantasy Sports Platform",
       inLanguage: "en-IN",
       potentialAction: {
         "@type": "SearchAction",
@@ -39,6 +47,10 @@ const homeSchema = {
       "@id": `${siteUrl}/#organization`,
       name: "11xPlay",
       url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/logo.png`,
+      },
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
