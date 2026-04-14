@@ -8,45 +8,58 @@ import RightSidebar from "@/components/RightSidebar";
 import GameGrid from "@/components/GameGrid";
 import MobileBottomNav from "@/components/MobileBottomNav";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://11xplay.in";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://11xplay.black";
 
 export const metadata: Metadata = {
-  alternates: { canonical: siteUrl },
+  title: "11xPlay — India's Trusted Cricket ID & Fantasy Sports Platform",
+  description:
+    "Sign up on 11xPlay for cricket fantasy sports, live skill games, and fast UPI deposits. India's most trusted cricket ID provider.",
+  alternates: {
+    canonical: siteUrl,
+    languages: {
+      "en-IN": siteUrl,
+      "x-default": siteUrl,
+    },
+  },
+  openGraph: {
+    title: "11xPlay — India's Trusted Cricket ID & Fantasy Sports Platform",
+    description:
+      "Sign up on 11xPlay for cricket fantasy sports, live skill games, and fast UPI deposits. India's most trusted cricket ID provider.",
+    url: siteUrl,
+    type: "website",
+    images: [{ url: `${siteUrl}/og-image.jpg` }],
+  },
+  robots: { index: true, follow: true },
 };
 
-const homeSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      url: siteUrl,
-      name: "11xPlay",
-      description:
-        "India's #1 Fantasy Sports & Skill Gaming Platform",
-      inLanguage: "en-IN",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${siteUrl}/?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
+const homeSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "11xPlay",
+    url: siteUrl,
+    logo: { "@type": "ImageObject", url: `${siteUrl}/logo.png` },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      availableLanguage: ["English", "Hindi"],
     },
-    {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      name: "11xPlay",
-      url: siteUrl,
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        availableLanguage: ["English", "Hindi"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "11xPlay",
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteUrl}/search?q={search_term_string}`,
       },
+      "query-input": "required name=search_term_string",
     },
-  ],
-};
+  },
+];
 
 const featuredSports = [
   {
@@ -97,6 +110,11 @@ export default function HomePage() {
 
           {/* Main content */}
           <main id="main-content" className="main-content">
+            {/* SEO H1 — visually hidden but present for crawlers */}
+            <h1 className="sr-only">
+              India&apos;s Trusted Cricket ID &amp; Fantasy Sports Platform
+            </h1>
+
             {/* Hero banner slider — LCP element */}
             <BannerSlider />
 

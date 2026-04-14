@@ -5,11 +5,23 @@ import Footer from "@/components/Footer";
 import LeftSidebar from "@/components/LeftSidebar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 
+const casinoSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://11xplay.black" },
+      { "@type": "ListItem", position: 2, name: "Skill Games", item: "https://11xplay.black/casino" },
+    ],
+  },
+];
+
 export const metadata: Metadata = {
-  title: "Live Casino — Roulette, Teen Patti, Baccarat",
+  title: "11xPlay Skill Games — Live Casino & Real Money Games India",
   description:
-    "Play live casino games on 11xPlay — Roulette, Teen Patti, Andar Bahar, Dragon Tiger, Baccarat, Blackjack and more. Real dealers, instant UPI payouts.",
-  alternates: { canonical: "/casino" },
+    "Play skill-based live dealer games on 11xPlay. Teen Patti, Andar Bahar, Roulette and more. Instant UPI deposits and withdrawals.",
+  alternates: { canonical: "https://11xplay.black/casino" },
+  robots: { index: true, follow: true },
 };
 
 const categories = [
@@ -48,6 +60,10 @@ const bgColors = [
 export default function CasinoPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(casinoSchema) }}
+      />
       <Header />
       <div
         className="dashboard-grid"
@@ -59,7 +75,7 @@ export default function CasinoPage() {
           {/* Casino hero */}
           <div className="casino-hero">
             <h1 className="casino-hero-title">
-              🎰 Live Casino
+              🎰 Live Skill Games — Teen Patti, Andar Bahar &amp; More
             </h1>
             <p style={{ fontSize: "14px", color: "var(--color-text-muted)", marginTop: "6px" }}>
               Real dealers. Instant payouts. The best skill games in India.

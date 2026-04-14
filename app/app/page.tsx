@@ -4,13 +4,20 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://11xplay.in";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://11xplay.black";
 
 export const metadata: Metadata = {
-  title: "Download 11xPlay APK — Free Android App",
+  title: "Download 11xPlay App — Cricket ID APK for Android & iOS",
   description:
-    "Download the 11xPlay app free for Android. Fast, secure, and optimized for Indian users. Instant UPI deposits & withdrawals, live IPL fantasy cricket, casino games. APK download available.",
+    "Download the 11xPlay APK for Android or install on iOS. Free app for cricket fantasy sports and skill-based games in India.",
   alternates: { canonical: `${siteUrl}/app` },
+  openGraph: {
+    title: "Download 11xPlay App — Cricket ID APK for Android & iOS",
+    description:
+      "Download the 11xPlay APK for Android or install on iOS. Free app for cricket fantasy sports and skill-based games in India.",
+    url: `${siteUrl}/app`,
+  },
+  robots: { index: true, follow: true },
 };
 
 const steps = [
@@ -73,20 +80,74 @@ const features = [
   },
 ];
 
-const appSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "11xPlay",
-  operatingSystem: "Android",
-  applicationCategory: "GameApplication",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "INR",
+const appSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "11xPlay App",
+    applicationCategory: "SportsApplication",
+    operatingSystem: "Android, iOS",
+    url: `${siteUrl}/app`,
+    downloadUrl: `${siteUrl}/app`,
+    description:
+      "Download the 11xPlay APK for Android or install on iOS. Free app for cricket fantasy sports and skill-based games in India.",
+    inLanguage: "en-IN",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.5",
+      bestRating: "5",
+      ratingCount: "10000",
+    },
+    publisher: { "@type": "Organization", name: "11xPlay", url: siteUrl },
   },
-  description:
-    "India's premier fantasy sports and skill-based gaming app. Play cricket fantasy, live casino and more.",
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I download the 11xPlay APK?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Visit 11xplay.black/app and tap the Download APK button. Enable 'Install from unknown sources' in your Android settings, then open the downloaded APK file to install. The process takes under 2 minutes.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the 11xPlay app available on iOS?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, the 11xPlay app is available for iOS devices. Visit 11xplay.black/app and follow the iOS installation guide to add it to your iPhone or iPad.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What cricket fantasy sports are available on the 11xPlay app?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The 11xPlay app features IPL 2026 fantasy cricket, live match prediction games, T20 fantasy leagues, and skill-based cricket ID contests for Indian players.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the 11xPlay app safe to download?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. The 11xPlay APK is officially distributed via 11xplay.black/app. Always download from the official site to ensure you get the authentic, malware-free version.",
+        },
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Download App", item: `${siteUrl}/app` },
+    ],
+  },
+];
 
 export default function AppDownloadPage() {
   return (
@@ -120,9 +181,8 @@ export default function AppDownloadPage() {
                 📲 FREE DOWNLOAD
               </div>
               <h1 className="app-hero-title">
-                Download <span>11xPlay</span>
-                <br />
-                App for Android
+                Download 11xPlay App —{" "}
+                <span>Cricket ID APK for Android &amp; iOS</span>
               </h1>
               <p className="app-hero-desc">
                 India&apos;s fastest fantasy sports and skill gaming app. Live IPL

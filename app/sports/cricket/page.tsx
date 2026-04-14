@@ -6,11 +6,37 @@ import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 
+const cricketSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://11xplay.black" },
+      { "@type": "ListItem", position: 2, name: "Cricket Fantasy", item: "https://11xplay.black/sports/cricket" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    name: "IPL 2026 Fantasy Cricket",
+    sport: "https://en.wikipedia.org/wiki/Cricket",
+    startDate: "2026-03-22",
+    endDate: "2026-05-25",
+    location: {
+      "@type": "Place",
+      name: "India",
+      address: { "@type": "PostalAddress", addressCountry: "IN" },
+    },
+    url: "https://11xplay.black/sports/cricket",
+  },
+];
+
 export const metadata: Metadata = {
-  title: "Cricket Fantasy & Predictions",
+  title: "IPL Fantasy Cricket 2026 — 11xPlay Cricket Prediction App",
   description:
-    "Play cricket fantasy on 11xPlay — India vs Pakistan, IPL 2026, T20 World Cup, Big Bash and more. Skill-based predictions with instant UPI payouts.",
-  alternates: { canonical: "/sports/cricket" },
+    "Play IPL 2026 fantasy cricket on 11xPlay. Build your dream team, predict match outcomes, and win with India's best cricket prediction app.",
+  alternates: { canonical: "https://11xplay.black/sports/cricket" },
+  robots: { index: true, follow: true },
 };
 
 const matches = [
@@ -85,6 +111,10 @@ const matches = [
 export default function CricketPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(cricketSchema) }}
+      />
       <Header />
       <div
         className="dashboard-grid"
@@ -95,7 +125,7 @@ export default function CricketPage() {
         <main id="main-content" className="main-content">
           {/* Hero */}
           <div className="sport-hero">
-            <h1 className="sport-hero-title">🏏 Cricket</h1>
+            <h1 className="sport-hero-title">🏏 IPL Fantasy Cricket 2026 — Build Your Dream Team</h1>
             <p className="sport-hero-desc">
               Live cricket fantasy &amp; skill-based predictions — IPL, T20 World
               Cup, The Ashes and more. Instant UPI payouts.
