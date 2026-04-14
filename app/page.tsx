@@ -164,7 +164,7 @@ export default function HomePage() {
                       style={{
                         fontWeight: 700,
                         fontSize: "14px",
-                        color: "var(--color-white)",
+                        color: "#ffffff",
                       }}
                     >
                       {sport.title}
@@ -176,7 +176,7 @@ export default function HomePage() {
                   <p
                     style={{
                       fontSize: "12px",
-                      color: "var(--color-text-muted)",
+                      color: "rgba(255,255,255,0.75)",
                       lineHeight: 1.5,
                     }}
                   >
@@ -194,18 +194,18 @@ export default function HomePage() {
               style={{
                 margin: "12px 16px",
                 padding: "12px 16px",
-                background: "rgba(255,0,0,0.05)",
-                border: "1px solid rgba(255,0,0,0.15)",
+                background: "#fff8e1",
+                border: "1px solid #ffc107",
                 borderRadius: "6px",
                 fontSize: "12px",
-                color: "var(--color-text-muted)",
+                color: "#555555",
                 lineHeight: 1.6,
               }}
             >
-              <strong style={{ color: "#ff6b6b" }}>18+ Only.</strong>{" "}
+              <strong style={{ color: "#b71c1c" }}>18+ Only.</strong>{" "}
               Fantasy sports and skill-based gaming involve financial risk.
               Not available in Assam, Odisha, Nagaland, Sikkim, and Telangana.{" "}
-              <Link href="/responsible-gaming" style={{ color: "var(--color-gold)" }}>
+              <Link href="/responsible-gaming" style={{ color: "#1a3da6", fontWeight: 600 }}>
                 Play Responsibly →
               </Link>
             </div>

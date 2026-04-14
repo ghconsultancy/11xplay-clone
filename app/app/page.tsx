@@ -320,8 +320,8 @@ export default function AppDownloadPage() {
                     height: "280px",
                     background:
                       i % 2 === 0
-                        ? "linear-gradient(135deg, #1a0a00, #0d0d0d)"
-                        : "linear-gradient(135deg, #0a001a, #0d0d0d)",
+                        ? "linear-gradient(135deg, #1a3da6, #0f2462)"
+                        : "linear-gradient(135deg, #0f2462, #0a1a40)",
                     border: "2px solid var(--color-border)",
                     borderRadius: "16px",
                     display: "flex",

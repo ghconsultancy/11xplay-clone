@@ -6,17 +6,17 @@
    CSS Custom Properties — 11xPlay Design Tokens
    ========================================================= */
 :root {
-  --theme-primary: linear-gradient(94deg, #e85d04, #f7a521 55%, #e85d04);
-  --theme-secondary: #e85d04;
-  --color-bg: #0d0d0d;
-  --color-surface: #161616;
-  --color-surface-2: #1e1e1e;
+  --theme-primary: linear-gradient(to bottom, #1a3da6, #0f2462);
+  --theme-secondary: #1a3da6;
+  --color-bg: #ffffff;
+  --color-surface: #1a3da6;
+  --color-surface-2: #0f2462;
   --color-white: #ffffff;
-  --color-gold: #f7a521;
-  --color-gold-light: #ffd166;
-  --color-text-muted: #999999;
-  --color-border: #282828;
-  --color-menu: #e0e0e0;
+  --color-gold: #ffc107;
+  --color-gold-light: #ffd740;
+  --color-text-muted: #6c757d;
+  --color-border: #dee2e6;
+  --color-menu: #ffffff;
 
   --container-max: 1400px;
   --radius: 4px;
@@ -36,7 +36,7 @@ html {
 
 body {
   background-color: var(--color-bg);
-  color: var(--color-white);
+  color: #444444;
   line-height: 1.5;
   font-size: 14px;
 }
@@ -77,12 +77,12 @@ img[width][height] {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--color-bg);
+  background: var(--theme-primary);
 }
 
 /* Marquee bar */
 .marquee-bar {
-  background: var(--theme-secondary);
+  background: var(--color-surface-2);
   overflow: hidden;
   padding: 4px 0;
   white-space: nowrap;
@@ -108,8 +108,8 @@ img[width][height] {
 
 /* Top header */
 .top-header {
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: 6px 12px;
 }
 
@@ -174,9 +174,9 @@ img[width][height] {
 }
 
 .search-input {
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  color: var(--color-white);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #ffffff;
   padding: 5px 10px;
   border-radius: var(--radius);
   font-size: 13px;
@@ -186,17 +186,18 @@ img[width][height] {
 }
 
 .search-input::placeholder {
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.55);
 }
 
 .search-input:focus {
-  border-color: var(--theme-secondary);
+  border-color: var(--color-gold);
+  background: rgba(255,255,255,0.18);
 }
 
 .btn-login {
   background: transparent;
-  border: 1px solid var(--theme-secondary);
-  color: var(--theme-secondary);
+  border: 1px solid rgba(255,255,255,0.8);
+  color: #ffffff;
   padding: 5px 14px;
   border-radius: var(--radius);
   font-size: 13px;
@@ -206,13 +207,13 @@ img[width][height] {
 }
 
 .btn-login:hover {
-  background: var(--theme-secondary);
+  background: rgba(255,255,255,0.15);
   color: #fff;
 }
 
 .btn-register {
-  background: var(--theme-secondary);
-  color: #fff;
+  background: #ffffff;
+  color: var(--color-surface);
   padding: 5px 14px;
   border-radius: var(--radius);
   font-size: 13px;
@@ -222,7 +223,7 @@ img[width][height] {
 }
 
 .btn-register:hover {
-  background: var(--color-primary-dark, #c94e00);
+  background: rgba(255,255,255,0.9);
 }
 
 /* Hamburger */
@@ -247,7 +248,7 @@ img[width][height] {
 /* Sport menu nav */
 .sport-menu {
   background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -281,8 +282,8 @@ img[width][height] {
 
 .sport-menu-link:hover,
 .sport-menu-link.active {
-  color: var(--color-gold-light);
-  border-bottom-color: var(--theme-secondary);
+  color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
 }
 
 .sport-menu-link.ipl-link {
@@ -301,7 +302,7 @@ img[width][height] {
 /* Mobile dropdown */
 .mobile-menu-dropdown {
   background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255,255,255,0.1);
   display: flex;
   flex-direction: column;
 }
@@ -313,13 +314,13 @@ img[width][height] {
   padding: 10px 16px;
   color: var(--color-menu);
   font-size: 14px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   transition: background var(--transition);
 }
 
 .mobile-menu-item:hover {
   background: var(--color-surface-2);
-  color: var(--color-gold-light);
+  color: var(--color-gold);
 }
 
 .mobile-menu-item.ipl-item {
@@ -363,14 +364,15 @@ img[width][height] {
 .left-sidebar {
   display: none;
   flex-direction: column;
-  border-right: 1px solid var(--color-border);
+  background: #1a3da6;
+  border-right: 1px solid rgba(255,255,255,0.1);
   padding: 12px 0;
   position: sticky;
   top: 88px;
   max-height: calc(100vh - 88px);
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
 }
 
 @media (min-width: 1024px) {
@@ -384,7 +386,7 @@ img[width][height] {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.6);
   padding: 4px 14px 8px;
 }
 
@@ -399,14 +401,14 @@ img[width][height] {
   align-items: center;
   gap: 8px;
   padding: 8px 14px;
-  color: var(--color-menu);
+  color: rgba(255,255,255,0.9);
   font-size: 13px;
   transition: background var(--transition), color var(--transition);
 }
 
 .sport-nav-link:hover {
   background: var(--color-surface-2);
-  color: var(--color-gold-light);
+  color: var(--color-gold);
 }
 
 .sport-nav-icon {
@@ -458,8 +460,8 @@ img[width][height] {
 }
 
 .sidebar-card {
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
   border-radius: 6px;
   padding: 12px;
   margin-bottom: 12px;
@@ -470,7 +472,7 @@ img[width][height] {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-gold);
+  color: var(--color-surface);
   margin-bottom: 10px;
 }
 
@@ -479,7 +481,7 @@ img[width][height] {
   flex-direction: column;
   gap: 4px;
   padding: 8px 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #dee2e6;
   font-size: 12px;
 }
 
@@ -502,11 +504,11 @@ img[width][height] {
 
 .match-teams {
   font-weight: 600;
-  color: var(--color-white);
+  color: #333333;
 }
 
 .match-score {
-  color: var(--color-gold);
+  color: var(--color-surface);
   font-weight: 600;
 }
 
@@ -515,7 +517,7 @@ img[width][height] {
    ========================================================= */
 .banner-slider {
   position: relative;
-  background: var(--color-surface);
+  background: #1a3da6;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
 }
@@ -567,7 +569,7 @@ img[width][height] {
 }
 
 .banner-dot.active {
-  background: var(--theme-secondary);
+  background: var(--color-gold);
   transform: scale(1.3);
 }
 
@@ -578,15 +580,17 @@ img[width][height] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px 8px;
-  border-bottom: 1px solid var(--color-border);
+  padding: 10px 16px;
+  background: #1a3da6;
+  border-bottom: none;
 }
 
 .section-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -632,9 +636,9 @@ img[width][height] {
   position: relative;
   border-radius: 6px;
   overflow: hidden;
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  transition: transform var(--transition), border-color var(--transition);
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
   cursor: pointer;
   aspect-ratio: 3 / 2;
   display: flex;
@@ -644,7 +648,8 @@ img[width][height] {
 
 .game-card:hover {
   transform: translateY(-2px);
-  border-color: var(--theme-secondary);
+  border-color: var(--color-surface);
+  box-shadow: 0 4px 12px rgba(26,61,166,0.15);
 }
 
 .game-card-img {
@@ -698,8 +703,8 @@ img[width][height] {
    App Download CTA Strip
    ========================================================= */
 .app-cta-strip {
-  background: var(--color-surface-2);
-  border-bottom: 1px solid var(--color-border);
+  background: #e8f0fe;
+  border-bottom: 1px solid #dee2e6;
   padding: 10px 16px;
   display: flex;
   align-items: center;
@@ -710,7 +715,7 @@ img[width][height] {
 
 .app-cta-strip p {
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: #444444;
   flex: 1;
 }
 
@@ -727,7 +732,7 @@ img[width][height] {
 }
 
 .app-cta-btn:hover {
-  background: #c94e00;
+  background: #0f2462;
   color: #fff;
 }
 
@@ -735,20 +740,21 @@ img[width][height] {
    Sport Page Hero
    ========================================================= */
 .sport-hero {
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--theme-primary);
+  border-bottom: none;
   padding: 24px 16px;
 }
 
 .sport-hero-title {
   font-size: clamp(22px, 4vw, 32px);
   font-weight: 800;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 
 .sport-hero-desc {
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.8);
   max-width: 600px;
 }
 
@@ -759,6 +765,7 @@ img[width][height] {
   border-bottom: 1px solid var(--color-border);
   overflow-x: auto;
   scrollbar-width: none;
+  background: #f8f9fa;
 }
 
 .sport-tab-list::-webkit-scrollbar { display: none; }
@@ -768,19 +775,19 @@ img[width][height] {
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--color-text-muted);
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
+  color: #444444;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
   cursor: pointer;
   white-space: nowrap;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .sport-tab.active,
 .sport-tab:hover {
-  background: var(--theme-secondary);
+  background: var(--color-surface);
   color: #fff;
-  border-color: var(--theme-secondary);
+  border-color: var(--color-surface);
 }
 
 /* Match listing */
@@ -796,13 +803,13 @@ img[width][height] {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #dee2e6;
   transition: background var(--transition);
   cursor: pointer;
 }
 
 .match-row:hover {
-  background: var(--color-surface-2);
+  background: #f0f4ff;
 }
 
 .match-info {
@@ -814,7 +821,7 @@ img[width][height] {
 .match-title {
   font-size: 13px;
   font-weight: 600;
-  color: var(--color-white);
+  color: #333333;
 }
 
 .match-meta {
@@ -830,9 +837,9 @@ img[width][height] {
 }
 
 .odds-btn {
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  color: var(--color-white);
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #333333;
   padding: 5px 10px;
   border-radius: var(--radius);
   font-size: 12px;
@@ -844,8 +851,8 @@ img[width][height] {
 }
 
 .odds-btn:hover {
-  background: rgba(232, 93, 4, 0.15);
-  border-color: var(--theme-secondary);
+  background: rgba(26,61,166,0.08);
+  border-color: var(--color-surface);
 }
 
 .odds-back { background: rgba(100, 149, 237, 0.15); }
@@ -914,7 +921,7 @@ img[width][height] {
 }
 
 .btn-dl-primary:hover {
-  background: #c94e00;
+  background: #0f2462;
   color: #fff;
 }
 
@@ -946,8 +953,8 @@ img[width][height] {
 .app-mockup-frame {
   width: 220px;
   height: 420px;
-  background: var(--color-surface-2);
-  border: 3px solid var(--color-border);
+  background: #0f2462;
+  border: 3px solid rgba(26,61,166,0.4);
   border-radius: 28px;
   display: flex;
   flex-direction: column;
@@ -956,7 +963,7 @@ img[width][height] {
   padding: 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(232,93,4,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(26,61,166,0.4);
 }
 
 .app-mockup-frame::before {
@@ -972,7 +979,7 @@ img[width][height] {
 .app-mockup-screen {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1a0a00 0%, #0d0d0d 100%);
+  background: linear-gradient(135deg, #0a1a40 0%, #0f2462 100%);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -1096,9 +1103,9 @@ img[width][height] {
    Casino Page
    ========================================================= */
 .casino-hero {
-  background: linear-gradient(135deg, #1a0a00 0%, #0d0d0d 60%, #1a0005 100%);
+  background: linear-gradient(135deg, #0f2462 0%, #1a3da6 60%, #0a1a40 100%);
   padding: 32px 16px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: none;
   text-align: center;
 }
 
@@ -1124,12 +1131,12 @@ img[width][height] {
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
   cursor: pointer;
   white-space: nowrap;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .filter-chip.active,
@@ -1148,7 +1155,7 @@ img[width][height] {
   align-items: center;
   justify-content: center;
   padding: 24px 16px;
-  background: radial-gradient(ellipse at top, rgba(232,93,4,0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at top, rgba(26,61,166,0.08) 0%, transparent 60%);
 }
 
 .login-card {
@@ -1189,9 +1196,9 @@ img[width][height] {
 
 .form-input {
   width: 100%;
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  color: var(--color-white);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff;
   padding: 10px 12px;
   border-radius: var(--radius);
   font-size: 14px;
@@ -1223,7 +1230,7 @@ img[width][height] {
 }
 
 .btn-submit:hover {
-  background: #c94e00;
+  background: #0f2462;
 }
 
 .login-divider {
@@ -1268,7 +1275,7 @@ img[width][height] {
   font-size: clamp(20px, 4vw, 28px);
   font-weight: 800;
   margin-bottom: 8px;
-  color: var(--color-gold);
+  color: var(--color-surface);
 }
 
 .text-page-updated {
@@ -1281,13 +1288,13 @@ img[width][height] {
   font-size: 18px;
   font-weight: 700;
   margin: 28px 0 10px;
-  color: var(--color-white);
+  color: #333333;
 }
 
 .text-page p,
 .text-page li {
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: #555555;
   line-height: 1.8;
   margin-bottom: 10px;
 }
@@ -1305,8 +1312,8 @@ img[width][height] {
    Footer
    ========================================================= */
 .site-footer {
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  background: #0f2462;
+  border-top: none;
   margin-top: auto;
 }
 
@@ -1337,7 +1344,7 @@ img[width][height] {
 
 .footer-brand p {
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.7);
   line-height: 1.7;
   margin-bottom: 12px;
 }
@@ -1359,16 +1366,16 @@ img[width][height] {
 
 .footer-links a {
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.7);
   transition: color var(--transition);
 }
 
 .footer-links a:hover {
-  color: var(--color-gold-light);
+  color: var(--color-gold);
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255,255,255,0.1);
   padding: 14px 16px;
   max-width: var(--container-max);
   margin: 0 auto;
@@ -1381,7 +1388,7 @@ img[width][height] {
 
 .footer-copy {
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.5);
 }
 
 .footer-legal-links {
@@ -1391,18 +1398,18 @@ img[width][height] {
 
 .footer-legal-links a {
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.6);
   transition: color var(--transition);
 }
 
 .footer-legal-links a:hover {
-  color: var(--color-gold-light);
+  color: var(--color-gold);
 }
 
 /* 18+ disclaimer bar */
 .disclaimer-bar {
-  background: #1a0000;
-  border-top: 1px solid #3a1010;
+  background: rgba(0,0,0,0.25);
+  border-top: 1px solid rgba(255,255,255,0.08);
   padding: 10px 16px;
   display: flex;
   align-items: center;
@@ -1423,7 +1430,7 @@ img[width][height] {
 
 .disclaimer-text {
   font-size: 11px;
-  color: #cc9999;
+  color: rgba(255,255,255,0.6);
   line-height: 1.5;
 }
 
@@ -1435,8 +1442,8 @@ img[width][height] {
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  background: #1a3da6;
+  border-top: 1px solid rgba(255,255,255,0.1);
   display: flex;
   z-index: 900;
   padding-bottom: env(safe-area-inset-bottom);
@@ -1455,7 +1462,7 @@ img[width][height] {
   align-items: center;
   justify-content: center;
   padding: 8px 4px;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,0.7);
   font-size: 10px;
   font-weight: 600;
   gap: 3px;
@@ -1516,7 +1523,7 @@ img[width][height] {
 }
 
 .btn-home:hover {
-  background: #c94e00;
+  background: #0f2462;
   color: #fff;
 }
 
@@ -1541,17 +1548,18 @@ img[width][height] {
 
 .sport-card-link {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
   padding: 14px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), background var(--transition);
 }
 
 .sport-card-link:hover {
-  border-color: var(--theme-secondary);
+  background: var(--color-surface-2);
+  border-color: var(--color-gold);
 }
 
 /* =========================================================

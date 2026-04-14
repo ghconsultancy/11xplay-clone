@@ -2,26 +2,25 @@
 
 import { useState, useEffect } from "react";
 
-// Using picsum for placeholder banners — replace with real 11xPlay CDN images
 const SLIDES = [
   {
-    src: "https://picsum.photos/seed/11xplay-cricket/1200/400",
-    alt: "11xPlay IPL 2026 — Live Fantasy Cricket. Win Big Today.",
+    src: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1200&q=80",
+    alt: "11xPlay IPL 2026 — Live Cricket Betting & Fantasy. India vs Pakistan.",
   },
   {
-    src: "https://picsum.photos/seed/11xplay-casino/1200/400",
+    src: "https://images.unsplash.com/photo-1624880357913-a8539238245b?w=1200&q=80",
+    alt: "11xPlay Cricket Exchange — Best Odds on Every Match",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1611251135345-18c56206b863?w=1200&q=80",
     alt: "11xPlay Live Casino — Teen Patti, Roulette & More",
   },
   {
-    src: "https://picsum.photos/seed/11xplay-kabaddi/1200/400",
+    src: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1200&q=80",
     alt: "11xPlay Pro Kabaddi Fantasy League — Join Now",
   },
   {
-    src: "https://picsum.photos/seed/11xplay-app/1200/400",
-    alt: "11xPlay App — Download Free APK for Android",
-  },
-  {
-    src: "https://picsum.photos/seed/11xplay-bonus/1200/400",
+    src: "https://images.unsplash.com/photo-1593786082082-3c5bd3b75b58?w=1200&q=80",
     alt: "11xPlay Welcome Bonus — 100% on First Deposit",
   },
 ];

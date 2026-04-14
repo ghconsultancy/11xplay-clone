@@ -80,8 +80,8 @@ export default function RightSidebar() {
       <div
         className="sidebar-card"
         style={{
-          background: "linear-gradient(135deg, rgba(232,93,4,0.15) 0%, rgba(247,165,33,0.08) 100%)",
-          borderColor: "rgba(232,93,4,0.3)",
+          background: "linear-gradient(135deg, rgba(26,61,166,0.12) 0%, rgba(15,36,98,0.08) 100%)",
+          borderColor: "rgba(26,61,166,0.25)",
           textAlign: "center",
         }}
       >

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Exo_2 } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 
-const exo2 = Exo_2({
+const lato = Lato({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-exo2",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-lato",
+  weight: ["300", "400", "700", "900"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://11xplay.in";
@@ -79,8 +79,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={exo2.variable}>
-      <body className="font-body antialiased bg-bg text-white">{children}</body>
+    <html lang="en" className={lato.variable}>
+      <body className="font-body antialiased bg-bg text-text">{children}</body>
     </html>
   );
 }
